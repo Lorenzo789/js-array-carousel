@@ -8,23 +8,19 @@ const images = [
     ];
     
     const imgContainer = document.getElementById('img-container');
-    const newImg = document.createElement('img');
+    let imageActive = 0;
 
     for (let index = 0; index < images.length; index++) {
         
         const newImg = document.createElement('img');
 
-        
+        newImg.classList.add('ms_img_block');
+
         newImg.setAttribute('src' , images[index]);
         
-        if (index == 0) {
+        if (index != 0) {
             
-            newImg.classList.add('ms_img_block');
-            
-        } else {
-            
-            newImg.classList.add('ms_img');
-
+            newImg.classList.add('d-none');
         }
 
         imgContainer.append(newImg);
@@ -36,9 +32,16 @@ const images = [
     const nextButton = document.getElementById('next-btn');
     nextButton.addEventListener('click' , function(){
 
-        let imageActive = 0;
+        imageList[imageActive].classList.add('d-none');
 
-        newImg.classList.add('ms_img');
+        ++imageActive;
 
-        console.log(++imageActive);
+        
+        if (imageActive === images.length){
+
+            imageActive = 0;
+            
+        }
+        
+        imageList[imageActive].classList.remove('d-none');
     })
