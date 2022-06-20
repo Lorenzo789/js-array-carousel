@@ -8,7 +8,8 @@ const images = [
     ];
     
     const imgContainer = document.getElementById('img-container');
-    
+    const newImg = document.createElement('img');
+
     for (let index = 0; index < images.length; index++) {
         
         const newImg = document.createElement('img');
@@ -28,7 +29,16 @@ const images = [
 
         imgContainer.append(newImg);
 
-
-
     }
     
+    let imageList = imgContainer.children;
+    console.log(imageList);
+    const nextButton = document.getElementById('next-btn');
+    nextButton.addEventListener('click' , function(){
+
+        let imageActive = 0;
+
+        newImg.classList.add('ms_img');
+
+        console.log(++imageActive);
+    })
