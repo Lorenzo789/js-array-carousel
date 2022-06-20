@@ -42,6 +42,22 @@ const images = [
             imageActive = 0;
             
         }
-        
+
+        imageList[imageActive].classList.remove('d-none');
+    })
+
+    const prevButton = document.getElementById('prev-btn');
+    prevButton.addEventListener('click' , function(){
+
+        imageList[imageActive].classList.add('d-none');
+
+        --imageActive;
+
+        if (imageActive === -1) {
+            
+            imageActive = images.length-1;
+
+        }
+
         imageList[imageActive].classList.remove('d-none');
     })
