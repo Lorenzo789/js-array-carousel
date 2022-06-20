@@ -13,10 +13,22 @@ const images = [
         
         const newImg = document.createElement('img');
 
-        newImg.classList.add('ms_img');
-
+        
         newImg.setAttribute('src' , images[index]);
+        
+        if (index == 0) {
+            
+            newImg.classList.add('ms_img_block');
+            
+        } else {
+            
+            newImg.classList.add('ms_img');
+
+        }
 
         imgContainer.append(newImg);
-        
+
+
+
     }
+    
