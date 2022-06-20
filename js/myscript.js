@@ -27,6 +27,7 @@ const images = [
 
     }
     
+    //! NEXT BUTTON
     let imageList = imgContainer.children;
     console.log(imageList);
     const nextButton = document.getElementById('next-btn');
@@ -45,7 +46,9 @@ const images = [
 
         imageList[imageActive].classList.remove('d-none');
     })
+    //! NEXT BUTTON
 
+    //? PREV BUTTON
     const prevButton = document.getElementById('prev-btn');
     prevButton.addEventListener('click' , function(){
 
@@ -61,3 +64,4 @@ const images = [
 
         imageList[imageActive].classList.remove('d-none');
     })
+    //? PREV BUTTON
